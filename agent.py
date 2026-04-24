@@ -1,8 +1,7 @@
-from funcs import load_knowledge, get_model, build_system_prompt, build_graph, run_chat
+from funcs import get_model, build_retriever, build_graph, run_chat
 
-knowledge = load_knowledge("knowledge.json")
 model = get_model()
-system_prompt = build_system_prompt(knowledge)
-graph = build_graph(model, system_prompt)
+retriever = build_retriever()   # loads all PDFs from knowledge/ folder
+graph = build_graph(model, retriever)
 
 run_chat(graph)
