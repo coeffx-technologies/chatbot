@@ -1,4 +1,6 @@
 .env
 myenv
 .codex
-__pycache__
+__pycache__/
+*.pyc
+test.py

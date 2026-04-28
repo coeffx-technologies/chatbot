@@ -73,6 +73,29 @@ def retrieve_context(retriever, query: str) -> str:
         return ""
     return "\n\n".join(doc.page_content for doc in docs)
 
+# ------------------------------------------------------------
+# extracting compnay name if required 
+# ------------------------------------------------------------
+
+def extract_company_llm(model, context: str) -> str:
+    prompt = f"""
+You are extracting structured data.
+
+Task: Extract the company name from the text below.
+
+Rules:
+- Return ONLY the company name
+- No explanation
+- No extra words
+- If multiple companies exist, return the MAIN company the lead belongs to
+- If none found, return: Unknown
+
+Text:
+{context}
+"""
+    response = model.invoke(prompt)
+    return response.content.strip()
+
 
 # ---------------------------------------------------------------------------
 # Intent Assessment Tool
@@ -244,3 +267,4 @@ def run_chat(graph):
 
         assistant_reply = history[-1].content
         print(f"\nAlex: {assistant_reply}\n")
+        
