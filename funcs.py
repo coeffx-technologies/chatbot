@@ -73,97 +73,77 @@ def retrieve_context(retriever, query: str) -> str:
         return ""
     return "\n\n".join(doc.page_content for doc in docs)
 
-# ------------------------------------------------------------
-# extracting compnay name if required 
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Extracting companies names 
+# ---------------------------------------------------------------------------
+def extract_companies(user_message, model):
+    import ast
 
-def extract_company_llm(model, context: str) -> str:
     prompt = f"""
-You are extracting structured data.
+You are a company name extractor.
 
-Task: Extract the company name from the text below.
+Your job: extract ONLY companies the user explicitly wants researched or wants information about.
 
 Rules:
-- Return ONLY the company name
-- No explanation
-- No extra words
-- If multiple companies exist, return the MAIN company the lead belongs to
-- If none found, return: Unknown
+- INCLUDE a company if the user says: "research", "look up", "get info on", "tell me about", "find out about", or similar intent
+- EXCLUDE a company if the user says: "don't research", "skip", "ignore", "I don't like", "not interested in", or expresses negative intent
+- EXCLUDE companies mentioned only as context or background ("we used to work with X", "I heard about X")
+- If no companies need researching, return an empty list
 
-Text:
-{context}
+Examples:
+- "research Google and Microsoft but skip Apple" → ["Google", "Microsoft"]
+- "I don't like Tesla but look into Rivian" → ["Rivian"]
+- "we lost a deal with Salesforce, research HubSpot instead" → ["HubSpot"]
+- "tell me about our leads" → []
+- "research Google" → ["Google"]
+
+Return ONLY a valid Python list, nothing else. No explanation, no markdown.
+
+Text: {user_message}
 """
-    response = model.invoke(prompt)
-    return response.content.strip()
+
+    try:
+        return ast.literal_eval(
+            model.invoke(prompt).content.strip()
+        )
+    except:
+        return []
+
+def linked_in_fetch(company_name):
+
+    from scrapling.fetchers import StealthyFetcher
+
+    StealthyFetcher.adaptive = True
+
+    def after_load(page):
+        page.wait_for_timeout(5000)
+        print("Wait completed")
+        # Wait for the modal overlay to become visible first
+        modal = page.locator("div#base-contextual-sign-in-modal div.modal__overlay-visible")
+        try:
+            modal.first.wait_for(state="visible", timeout=10000)
+            print("Modal visible")
+        except Exception:
+            print("Modal not visible, trying button anyway")
+        dismiss = page.locator("button[data-tracking-control-name='organization_guest_contextual-sign-in-modal_modal_dismiss']")
+        try:
+            dismiss.first.wait_for(state="attached", timeout=5000)
+            dismiss.first.click(force=True)
+            print("Dismiss button clicked")
+            page.wait_for_timeout(3000)
+        except Exception as e:
+            print(f"Dismiss button not found: {e}")
 
 
-# ---------------------------------------------------------------------------
-# Intent Assessment Tool
-# ---------------------------------------------------------------------------
-
-# Rules used to judge a lead's intent level
-INTENT_RULES = [
-    ("replied_to_email",   "Replied to outreach email",          3),
-    ("opened_email",       "Opened email (tracked)",              1),
-    ("call_connected",     "Connected on a call",                 3),
-    ("call_attempted",     "Call attempted (no connect)",         1),
-    ("meeting_booked",     "Meeting / demo booked",               4),
-    ("positive_response",  "Expressed interest or asked Qs",      3),
-    ("no_response",        "No response at all",                 -2),
-    ("rejected",           "Explicitly said not interested",     -4),
-    ("follow_up_pending",  "Follow-up is pending / in progress",  1),
-    ("accepted_not_replied","Accepted request but no reply",       1),
-]
-
-def assess_lead_intent(lead_text: str) -> str:
-    """
-    Score a lead based on keywords found in their info text.
-    Returns a formatted intent report.
-    """
-    text_lower = lead_text.lower()
-    score = 0
-    matched_reasons = []
-
-    for key, label, points in INTENT_RULES:
-        # Check for keyword signals in the lead notes
-        keyword_map = {
-            "replied_to_email":    ["replied", "replied to email", "email reply"],
-            "opened_email":        ["opened email", "email opened"],
-            "call_connected":      ["call connected", "spoke", "talked"],
-            "call_attempted":      ["called", "call attempt", "no answer", "voicemail"],
-            "meeting_booked":      ["meeting booked", "demo booked", "scheduled"],
-            "positive_response":   ["interested", "asked", "wants to know", "tell me more"],
-            "no_response":         ["no response", "no reply", "ghosted", "not responded"],
-            "rejected":            ["not interested", "rejected", "unsubscribed", "do not contact"],
-            "follow_up_pending":   ["follow-up", "in progress", "following up", "pending"],
-            "accepted_not_replied":["accepted", "connected but", "accepted but not replied"],
-        }
-        if any(kw in text_lower for kw in keyword_map[key]):
-            score += points
-            matched_reasons.append(f"  {'✅' if points > 0 else '⚠️' if points > -3 else '❌'} {label} ({'+' if points > 0 else ''}{points} pts)")
-
-    # Determine intent level
-    if score >= 6:
-        level = "🔥 HIGH Intent"
-        summary = "Strong signals — prioritize this lead immediately."
-    elif score >= 2:
-        level = "🟡 MID Intent"
-        summary = "Some engagement — nurture and follow up consistently."
-    elif score >= 0:
-        level = "🔵 LOW Intent"
-        summary = "Minimal signals — light touch, monitor for change."
-    else:
-        level = "❌ Very Low / Cold"
-        summary = "Negative signals — consider pausing outreach for now."
-
-    reasons_text = "\n".join(matched_reasons) if matched_reasons else "  No strong signals detected."
-
-    return (
-        f"**Lead Intent Assessment**\n"
-        f"Score: {score} pts → {level}\n\n"
-        f"Signals found:\n{reasons_text}\n\n"
-        f"Recommendation: {summary}"
+    page = StealthyFetcher.fetch(
+        f"https://www.linkedin.com/company/{company_name}/",
+        headless=True,
+        network_idle=True,
+        page_action=after_load,
     )
+
+    description = page.css("p[data-test-id='about-us__description']")
+    return (description[0].text.strip() if description else "Description not found")
 
 
 # ---------------------------------------------------------------------------
@@ -202,32 +182,35 @@ def make_chat_node(model, retriever):
         # Get the latest user message
         last_message = state["messages"][-1].content
 
+        companies_list = extract_companies(last_message, model)
+        print(companies_list)
+        companies_info = ""  
+
+        if companies_list:
+            print('extracting companies info')
+            fetched = []
+            for i in companies_list:
+                company = linked_in_fetch(i)
+                fetched.append(company)
+            companies_info = "\n\n**Companies Info from LinkedIn:**\n" + "\n".join(fetched)
+
         # Retrieve relevant lead context from the vector DB
         context = retrieve_context(retriever, last_message)
 
-        # Check if the user is asking about intent — if so, run the tool
-        intent_keywords = ["intent", "likely to buy", "convert", "customer potential", "hot lead", "qualify"]
-        intent_report = ""
-        if any(kw in last_message.lower() for kw in intent_keywords) and context:
-            print("Using tool...")
-            intent_report = f"\n\n---\n{assess_lead_intent(context)}"
 
         # Build the full prompt with context injected
-        context_block = f"\n\n**Relevant Lead Data:**\n{context}" if context else "\n\n**Relevant Lead Data:** No matching lead data found."
+        context_block = (
+            f"\n\n**Relevant Lead Data:**\n{context}"
+            if context
+            else "\n\n**Relevant Lead Data:** No matching lead data found."
+        )
 
-        system_with_context = SYSTEM_PROMPT + context_block
+        system_with_context = SYSTEM_PROMPT + context_block + companies_info
 
         messages = [SystemMessage(content=system_with_context)] + state["messages"]
         response = model.invoke(messages)
-
-        # Append intent report to the response if it was triggered
-        if intent_report:
-            from langchain_core.messages import AIMessage
-            full_content = response.content + intent_report
-            response = AIMessage(content=full_content)
-
         return {"messages": [response]}
-
+        
     return chat_node
 
 
@@ -238,6 +221,7 @@ def make_chat_node(model, retriever):
 def build_graph(model, retriever) -> StateGraph:
     graph = StateGraph(ChatState)
     graph.add_node("chat", make_chat_node(model, retriever))
+
     graph.add_edge(START, "chat")
     graph.add_edge("chat", END)
     return graph.compile()
