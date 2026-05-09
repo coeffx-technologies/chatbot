@@ -78,7 +78,7 @@ def retrieve_context(retriever, query: str) -> str:
     return "\n\n".join(doc.page_content for doc in docs)
 
 # ---------------------------------------------------------------------------
-# Extracting companies names 
+# Extracting companies names and using function
 # ---------------------------------------------------------------------------
 def extract_companies(user_message, model):
 
