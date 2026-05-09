@@ -1,4 +1,5 @@
 import os
+import ast
 from dotenv import load_dotenv
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
@@ -6,6 +7,9 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from scrapling.fetchers import StealthyFetcher
+import json
+import re
 from langchain_chroma import Chroma
 from typing import Annotated
 from typing_extensions import TypedDict
@@ -77,7 +81,6 @@ def retrieve_context(retriever, query: str) -> str:
 # Extracting companies names 
 # ---------------------------------------------------------------------------
 def extract_companies(user_message, model):
-    import ast
 
     prompt = f"""
 You are a company name extractor.
@@ -104,36 +107,32 @@ Text: {user_message}
 
     try:
         return ast.literal_eval(
-            model.invoke(prompt).content.strip()
+            model.invoke(prompt).content.strip().lower()
         )
     except:
         return []
 
-def linked_in_fetch(company_name):
-
-    from scrapling.fetchers import StealthyFetcher
+def linkedin_fetch(company_name):
 
     StealthyFetcher.adaptive = True
 
+    # --- dismiss login modal if it pops up ---
     def after_load(page):
         page.wait_for_timeout(5000)
-        print("Wait completed")
-        # Wait for the modal overlay to become visible first
+
         modal = page.locator("div#base-contextual-sign-in-modal div.modal__overlay-visible")
         try:
             modal.first.wait_for(state="visible", timeout=10000)
-            print("Modal visible")
         except Exception:
-            print("Modal not visible, trying button anyway")
+            pass
+
         dismiss = page.locator("button[data-tracking-control-name='organization_guest_contextual-sign-in-modal_modal_dismiss']")
         try:
             dismiss.first.wait_for(state="attached", timeout=5000)
             dismiss.first.click(force=True)
-            print("Dismiss button clicked")
             page.wait_for_timeout(3000)
-        except Exception as e:
-            print(f"Dismiss button not found: {e}")
-
+        except Exception:
+            pass
 
     page = StealthyFetcher.fetch(
         f"https://www.linkedin.com/company/{company_name}/",
@@ -142,8 +141,47 @@ def linked_in_fetch(company_name):
         page_action=after_load,
     )
 
-    description = page.css("p[data-test-id='about-us__description']")
-    return (description[0].text.strip() if description else "Description not found")
+    # --- helpers ---
+    def text(selector):
+        el = page.css(selector)
+        return el[0].text.strip() if el else None
+
+    def attr(selector, attribute):
+        el = page.css(selector)
+        return el[0].attrib.get(attribute) if el else None
+
+    # --- dt/dd key-value pairs (industry, hq, founded, type, specialties, company size) ---
+    details = {}
+    for dt, dd in zip(page.css("dt"), page.css("dd")):
+        key = dt.text.strip().lower()
+        val = dd.text.strip()
+        if key:
+            details[key] = val
+
+    # --- followers: parse from og:description meta tag ---
+    tagline_raw = attr("meta[name='description']", "content")
+    followers_match = re.search(r"([\d,]+)\s+followers on LinkedIn", tagline_raw or "")
+    linkedin_followers = followers_match.group(1) if followers_match else None
+
+    # --- website: LinkedIn renders it as <a> inside dd, not plain text ---
+    website_el = page.css("dd a[data-test-id='about-us__website']") or page.css("dd a[href*='http']")
+    website = website_el[0].attrib.get("href") if website_el else None
+
+    return {
+        "company_slug":       company_name,
+        "company_name":       (attr("meta[property='og:title']", "content") or "").replace(" | LinkedIn", "").strip(),
+        "tagline":            tagline_raw,
+        "logo_url":           attr("meta[property='og:image']", "content"),
+        "description":        text("p[data-test-id='about-us__description']"),
+        "linkedin_followers": linkedin_followers,
+        "website":            website,
+        "industry":           details.get("industry"),
+        "hq":                 details.get("headquarters"),
+        "founded":            details.get("founded"),
+        "company_type":       details.get("type"),
+        "employee_count":     details.get("company size"),
+        "specialties":        details.get("specialties"),
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -184,19 +222,28 @@ def make_chat_node(model, retriever):
 
         companies_list = extract_companies(last_message, model)
         print(companies_list)
-        companies_info = ""  
+
+        companies_info = ""
 
         if companies_list:
-            print('extracting companies info')
+            print("extracting companies info")
+
             fetched = []
+
             for i in companies_list:
-                company = linked_in_fetch(i)
-                fetched.append(company)
-            companies_info = "\n\n**Companies Info from LinkedIn:**\n" + "\n".join(fetched)
+                company = linkedin_fetch(i)
+
+                if company:
+                    fetched.append(json.dumps(company, indent=2))
+
+            if fetched:
+                companies_info = (
+                    "\n\n**Companies Info from LinkedIn:**\n"
+                    + "\n".join(fetched)
+                )
 
         # Retrieve relevant lead context from the vector DB
         context = retrieve_context(retriever, last_message)
-
 
         # Build the full prompt with context injected
         context_block = (
@@ -205,12 +252,18 @@ def make_chat_node(model, retriever):
             else "\n\n**Relevant Lead Data:** No matching lead data found."
         )
 
-        system_with_context = SYSTEM_PROMPT + context_block + companies_info
+        system_with_context = (
+            SYSTEM_PROMPT
+            + context_block
+            + companies_info
+        )
 
         messages = [SystemMessage(content=system_with_context)] + state["messages"]
+
         response = model.invoke(messages)
+
         return {"messages": [response]}
-        
+
     return chat_node
 
 
