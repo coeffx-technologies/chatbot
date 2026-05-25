@@ -1,0 +1,102 @@
+{
+  "name": "Jeevesh Pranav Ravikannan",
+  "location": "India",
+  "current_job": "Founder",
+  "experience": [
+    {
+      "title": "Founder",
+      "company": "Rocketsteer GTM",
+      "start_date": {
+        "month": 11,
+        "year": 2025
+      },
+      "end_date": null
+    },
+    {
+      "title": "Selected Founder (Delta), C-II",
+      "company": "The Residency",
+      "start_date": {
+        "month": 10,
+        "year": 2025
+      },
+      "end_date": {
+        "month": 11,
+        "year": 2025
+      }
+    },
+    {
+      "title": "Founder",
+      "company": "Scripelle",
+      "start_date": {
+        "month": 3,
+        "year": 2025
+      },
+      "end_date": {
+        "month": 10,
+        "year": 2025
+      }
+    },
+    {
+      "title": "Director of Finance",
+      "company": null,
+      "start_date": {
+        "month": 5,
+        "year": 2024
+      },
+      "end_date": {
+        "month": 1,
+        "year": 2025
+      }
+    },
+    {
+      "title": "Project Lead",
+      "company": null,
+      "start_date": {
+        "month": 6,
+        "year": 2024
+      },
+      "end_date": {
+        "month": 11,
+        "year": 2024
+      }
+    },
+    {
+      "title": "Senior Consultant",
+      "company": null,
+      "start_date": {
+        "month": 1,
+        "year": 2024
+      },
+      "end_date": {
+        "month": 4,
+        "year": 2024
+      }
+    }
+  ],
+  "education": [
+    {
+      "school": "Vellore Institute of Technology",
+      "degree": "Bachelor of Technology - BTech",
+      "field": "Computer Science and Engineering with Specialization in Cyber Physical Systems",
+      "start_year": 2021,
+      "end_year": 2025
+    },
+    {
+      "school": "Abu Dhabi Indian School, Branch 1, Al Wathba",
+      "degree": "",
+      "field": "",
+      "start_year": 2016,
+      "end_year": 2021
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuing_org": "Amazon Web Services (AWS)"
+    },
+    {
+      "name": "Google Cloud Certified Digital Leader",
+      "issuing_org": "Google Cloud Skills Boost"
+    }
+  ]
+}

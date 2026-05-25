@@ -186,7 +186,7 @@ def generate_gtm_profile(md_path: str, allowed_options_path: str) -> dict:
 
 if __name__ == "__main__":
     result = generate_gtm_profile(
-        md_path="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/Tools/user_website/kissflow_com_scraped.txt",
+        md_path="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/test/www_amplemarket_com_scraped.txt",
         allowed_options_path="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/test/titles.json",
     )
 

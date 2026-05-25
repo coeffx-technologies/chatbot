@@ -1,0 +1,42 @@
+{
+  "name": "Darwinbox",
+  "linkedin_url": "https://www.linkedin.com/company/thedarwinbox",
+  "tagline": "We enable rapidly growing companies & large enterprises with AI-powered HCM for the evolving world of work!",
+  "description": "Darwinbox is a new-age, agile HCM Suite that enables enterprises and growing businesses to automate their day-to-day HR processes, deliver actionable insights and build better workplaces. Powered by Artificial Intelligence (AI) and Machine Learning (ML), Darwinbox provides a lightweight and easy to use mobile-first experience to the last mile employee.\n \n\ud83c\udf0d Today we serve over 1000 organizations and 4M employees across 130+ countries including large conglomerates and fast-growing tech companies like Adani, Kopi Kenangan, MatchMove, Starbucks, Apollo.io, Mahindra, Bank BTPN, TVS, Shakey\u2019s, Pouring With Heart, JSW, Ephicacy, Nivea, Swiggy, Tokopedia, JG Summit Group, NutriAsia, Indorama and more.\n\ud83c\udfc6 We have been recognized for the 4th consecutive year on the 2024 Gartner\u00ae Magic Quadrant\u2122, globally.\n\ud83d\ude80 We have been recognized as a \"Strong Performer\" on the Forrester\u00ae HCM Wave\u2122 2023.\n\ud83d\udcbc We have partnered with Microsoft with the focus on co-innovating and delivering solutions to enhance employee experience and organizational agility.\n\u2b50\ufe0f We are the best-rated solution by customers on Gartner\u2019s Peer Insights platform with an average rating of 4.7.",
+  "industry": "Software Development",
+  "company_type": "Privately Held",
+  "employee_count": 1447,
+  "employee_count_range": {
+    "start": 1001,
+    "end": 5000
+  },
+  "followers": 204550,
+  "founded": 2015,
+  "headquarters": "San Mateo, CA, United States",
+  "logo": "https://media.licdn.com/dms/image/v2/D560BAQEZW4o9M4nbVw/company-logo_400_400/B56ZvfZiajHAAY-/0/1768979572876/thedarwinbox_logo?e=1781136000&v=beta&t=CThMXVOF36mvQXHEsjuH_RloZJ5ZGPNUQXzPk7Kadig",
+  "website": "https://www.darwinbox.com",
+  "specialities": [
+    "Software as a Service",
+    "SaaS",
+    "Enterprise Software",
+    "Human Resource Information System",
+    "HRIS",
+    "Human Resource Management System",
+    "HRMS",
+    "Attendance Management",
+    "Leaves Management",
+    "Payroll Management",
+    "Reimbursement",
+    "Employee Engagement",
+    "Talent Management",
+    "Performance Management",
+    "Recruitment",
+    "Applicant Tracking System",
+    "Employee Onboarding",
+    "People Analytics",
+    "HR Analytics",
+    "Travel and Expense Management",
+    "Rewards and Recognition",
+    "HR Voicebot"
+  ]
+}
