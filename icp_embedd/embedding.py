@@ -67,17 +67,53 @@ def embed_functions(csv_path: str, out_path: str = "functions.npy"):
 
 
 def embed_product(csv_path: str, out_path: str = "product.npy"):
-    labels, texts = [], []
+    """
+    Embeds each product field separately and saves a dict:
+    {
+        "what_it_does": (vectors, labels),
+        "department":   (vectors, labels),
+        "works_on":     (vectors, labels),
+        "category":     (vectors, labels),
+        "services":     (vectors, labels)
+    }
+    """
+    field_data = {}
     with open(csv_path, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            labels.append(row.get("url", "product"))
-            texts.append(
-                f"{row['category']} | {row['what_it_does']} | "
-                f"{row['works_on']} | {row['services']} | {row['department']}"
-            )
-    _embed_and_save(texts, labels, out_path)
+            label = row.get("url", "product")
+            for field in ["what_it_does", "department", "works_on", "category", "services"]:
+                text = row.get(field, "")
+                if not text:
+                    continue
+                keywords = [kw.strip() for kw in text.split("|") if kw.strip()]
+                if not keywords:
+                    continue
+                # For each keyword, we need to embed individually.
+                # We'll collect all keywords for this field across all rows (only one row usually)
+                # But to be generic, we accumulate per field.
+                if field not in field_data:
+                    field_data[field] = {"keywords": [], "labels": []}
+                for kw in keywords:
+                    field_data[field]["keywords"].append(kw)
+                    field_data[field]["labels"].append(label)
+    
+    # Now embed each field's keywords separately and save as dict
+    result = {}
+    for field, data in field_data.items():
+        keywords = data["keywords"]
+        labels = data["labels"]
+        log.info("Embedding field '%s' with %d keywords", field, len(keywords))
+        vectors = []
+        for i in range(0, len(keywords), 50):
+            batch = keywords[i:i+50]
+            vectors.append(_embed(batch))
+        vectors = np.vstack(vectors)
+        result[field] = (vectors, labels)
+    
+    np.save(out_path, result)
+    log.info("✅ Saved per‑field product embeddings to %s", out_path)
 
-embed_industries("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/embedd_industries.csv")
-embed_titles("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/embedd_titles.csv")
-embed_functions("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/embedd_funcs.csv")
-embed_product("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/product_profile.csv")
+# embed_industries("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/embedd_industries.csv")
+# embed_titles("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/embedd_titles.csv")
+# embed_functions("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/embedd_funcs.csv")
+embed_product("/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/product_profile.csv")

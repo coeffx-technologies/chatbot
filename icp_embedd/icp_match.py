@@ -2,50 +2,87 @@ import csv
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-
-def _load_npy(path: str) -> tuple[np.ndarray, list[str]]:
+def load_npy(path: str):
+    """Loads .npy file – can be either old format (dict with 'vectors','labels') or new per‑field dict."""
     data = np.load(path, allow_pickle=True).item()
-    return data["vectors"], data["labels"]
+    return data
 
+def rank_with_max(product_vectors: np.ndarray, input_vectors: np.ndarray, input_labels: list[str], top_n: int):
+    sim_matrix = cosine_similarity(input_vectors, product_vectors)
+    best_scores = np.max(sim_matrix, axis=1)
+    top_indices = np.argsort(best_scores)[::-1][:top_n]
+    return [{"label": input_labels[i], "score": round(float(best_scores[i]), 4)} for i in top_indices]
 
-def _rank(product_vector: np.ndarray, vectors: np.ndarray, labels: list[str], top_n: int) -> list[dict]:
-    scores = cosine_similarity(product_vector, vectors)[0]
-    top_indices = np.argsort(scores)[::-1][:top_n]
-    return [{"label": labels[i], "score": round(float(scores[i]), 4)} for i in top_indices]
+def match(product_npy: str,
+          titles_npy: str,
+          industries_npy: str,
+          functions_npy: str,
+          out_path: str = "matches.csv"):
 
-
-def match(product_npy: str, titles_npy: str, industries_npy: str, functions_npy: str, out_path: str = "matches.csv"):
-    product_vectors, product_labels = _load_npy(product_npy)
-    product_vector = product_vectors[0:1]  # single product, shape (1, dims)
-
-    titles_vectors,     titles_labels     = _load_npy(titles_npy)
-    industries_vectors, industries_labels = _load_npy(industries_npy)
-    functions_vectors,  functions_labels  = _load_npy(functions_npy)
-
-    titles     = _rank(product_vector, titles_vectors,     titles_labels,     top_n=100)
-    industries = _rank(product_vector, industries_vectors, industries_labels, top_n=35)
-    functions  = _rank(product_vector, functions_vectors,  functions_labels,  top_n=35)
-
-    # pad shorter lists so all columns have same length
-    max_len = max(len(titles), len(industries), len(functions))
+    # Load product per‑field data
+    prod_data = load_npy(product_npy)   # dict: field -> (vectors, labels)
+    
+    # Extract vectors for each input type according to mapping
+    # Title → what_it_does + department
+    title_vectors = []
+    title_labels = []
+    for field in ["what_it_does", "department"]:
+        if field in prod_data:
+            v, lbl = prod_data[field]
+            title_vectors.append(v)
+            title_labels.extend(lbl)  # labels not really needed for similarity, but we keep for completeness
+    title_vectors = np.vstack(title_vectors) if title_vectors else np.empty((0,0))
+    
+    # Industry → works_on + category
+    ind_vectors = []
+    for field in ["works_on", "category"]:
+        if field in prod_data:
+            v, _ = prod_data[field]
+            ind_vectors.append(v)
+    ind_vectors = np.vstack(ind_vectors) if ind_vectors else np.empty((0,0))
+    
+    # Function → services + department
+    func_vectors = []
+    for field in ["services", "department"]:
+        if field in prod_data:
+            v, _ = prod_data[field]
+            func_vectors.append(v)
+    func_vectors = np.vstack(func_vectors) if func_vectors else np.empty((0,0))
+    
+    # Load input vectors (old format)
+    titles_data = np.load(titles_npy, allow_pickle=True).item()
+    titles_vec, titles_lbl = titles_data["vectors"], titles_data["labels"]
+    
+    ind_data = np.load(industries_npy, allow_pickle=True).item()
+    ind_vec, ind_lbl = ind_data["vectors"], ind_data["labels"]
+    
+    func_data = np.load(functions_npy, allow_pickle=True).item()
+    func_vec, func_lbl = func_data["vectors"], func_data["labels"]
+    
+    # Rank
+    titles_rank = rank_with_max(title_vectors, titles_vec, titles_lbl, top_n=100) if title_vectors.size > 0 else []
+    ind_rank    = rank_with_max(ind_vectors,    ind_vec,    ind_lbl,    top_n=35)  if ind_vectors.size > 0 else []
+    func_rank   = rank_with_max(func_vectors,   func_vec,   func_lbl,   top_n=35)  if func_vectors.size > 0 else []
+    
+    # Pad to same length
+    max_len = max(len(titles_rank), len(ind_rank), len(func_rank))
     def pad(lst, n): return lst + [{"label": "", "score": ""}] * (n - len(lst))
-
-    titles     = pad(titles,     max_len)
-    industries = pad(industries, max_len)
-    functions  = pad(functions,  max_len)
-
+    titles_rank = pad(titles_rank, max_len)
+    ind_rank    = pad(ind_rank,    max_len)
+    func_rank   = pad(func_rank,   max_len)
+    
     with open(out_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["title", "title_score", "industry", "industry_score", "function", "function_score"])
-        for t, ind, func in zip(titles, industries, functions):
-            writer.writerow([t["label"], t["score"], ind["label"], ind["score"], func["label"], func["score"]])
+        w = csv.writer(f)
+        w.writerow(["title", "title_score", "industry", "industry_score", "function", "function_score"])
+        for t, ind, func in zip(titles_rank, ind_rank, func_rank):
+            w.writerow([t["label"], t["score"], ind["label"], ind["score"], func["label"], func["score"]])
+    
+    print(f"✅ Saved: {out_path}  ({max_len} rows)")
 
-    print(f"✅  Saved: {out_path}  ({max_len} rows)")
-
-
-match(
-    product_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/product.npy",
-    titles_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/titles.npy",
-    industries_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/industries.npy",
-    functions_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/functions.npy"
-)
+if __name__ == "__main__":
+    match(
+        product_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/npys/product.npy",
+        titles_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/npys/titles.npy",
+        industries_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/npys/industries.npy",
+        functions_npy="/media/prince/5A4E832F4E83034D/Rocketsteer/REST_API/icp_embedd/npys/functions.npy"
+    )

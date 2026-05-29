@@ -1,101 +1,101 @@
 title,title_score,industry,industry_score,function,function_score
-Business Operations Analyst,0.6468,No-Code and Low-Code Platforms,0.7574,Business Operations,0.632
-Enterprise Sales Manager,0.6127,Robotic Process Automation,0.6465,Implementation,0.586
-Enterprise Architect,0.6099,Integration Platforms,0.645,Enterprise Sales,0.5763
-Finance Business Partner,0.6068,Enterprise Software,0.6279,Sales Operations,0.556
-Business Operations Manager,0.6067,Field Service Software,0.6148,Sales Enablement,0.5529
-Head of Digital Transformation,0.599,Developer Tools,0.6025,Global Sales,0.5526
-Sales Development Manager,0.5987,Business-to-Business Software,0.5985,Marketing Operations,0.5487
-Director of Digital Transformation,0.5935,Digital Agency,0.594,Information Technology,0.5433
-Financial Analyst,0.5924,Customer Relationship Management Software,0.5903,Sales,0.5399
-Sales Manager,0.5892,Enterprise Resource Planning,0.5855,Commercial Sales,0.5387
-Inside Sales Manager,0.5884,Vertical Software,0.5805,Sales Development,0.5357
-Sales Development Representative,0.5872,Management Consulting,0.5805,Small Business Sales,0.5325
-Engineering Manager,0.587,Discrete Manufacturing,0.5774,Cloud,0.5322
-Technical Architect,0.5869,Productivity Software,0.5743,Research and Development,0.5315
-Vice President of Digital Transformation,0.5819,Collaboration Software,0.5741,Purchasing,0.5313
-Sales Operations Manager,0.5809,Commercial Banking,0.5685,Analytics,0.5281
-Pre-Sales Solutions Architect,0.5805,Customer Data Platform,0.5671,Enterprise Architecture,0.528
-Director of Small Business Sales,0.579,Human Resources Technology,0.5652,Partner Sales,0.5264
-Enterprise Customer Success Manager,0.5778,Artificial Intelligence,0.5652,Digital Transformation,0.5262
-Commercial Sales Manager,0.5777,Performance Marketing Services,0.5647,Pipeline Generation,0.5254
-Head of Small Business Sales,0.5773,Revenue Intelligence,0.5637,Human Resources,0.5248
-Vice President of Enterprise Sales,0.5767,Sales Engagement,0.5623,Software Engineering,0.5247
-Vice President of Enterprise Architecture,0.5758,DevOps,0.5614,Channel Sales,0.5231
-Senior Sales Development Representative,0.5748,Analytics Consulting,0.5596,Manufacturing,0.5185
-Principal Solutions Engineer,0.5737,Infrastructure Software,0.5575,Business Intelligence,0.518
-General Manager,0.5735,Conversation Intelligence,0.5573,Artificial Intelligence,0.5177
-Solutions Engineer,0.5731,Application Security,0.5562,Strategy and Operations,0.5169
-Sales Operations Analyst,0.5717,Corporate Banking,0.5561,Operations,0.5152
-Operations Manager,0.5712,Workforce Technology,0.5558,Workforce Management,0.5152
-Revenue Operations Analyst,0.5706,Marketing Technology,0.5522,New Business,0.5132
-Senior People Business Partner,0.5704,E-commerce,0.5493,Admissions,0.5098
-Analytics Engineer,0.5702,Cloud Computing,0.5456,Technology,0.5087
-Alliances Manager,0.5698,Revenue Operations Software,0.5453,Platform,0.5066
-Sales Engineer,0.5687,Industrial Equipment,0.545,Architecture,0.5058
-Senior Engineering Manager,0.568,Technology Consulting,0.5444,Business Development,0.505
-Lead Sales Development Representative,0.5678,,,,
-Director of Business Operations,0.5678,,,,
-Partner Sales Manager,0.5677,,,,
-Senior Solutions Engineer,0.5664,,,,
-Platform Manager,0.5657,,,,
-Senior Product Manager,0.5656,,,,
-Head of Enterprise Sales,0.5649,,,,
-Deputy Director General,0.5642,,,,
-Owner,0.5632,,,,
-Head of Platform,0.5627,,,,
-Business Development Representative,0.5623,,,,
-Senior Associate,0.5616,,,,
-Partnerships Manager,0.5603,,,,
-Business Development Manager,0.5599,,,,
-Enterprise Account Executive,0.5582,,,,
-Business Intelligence Developer,0.5567,,,,
-Senior Human Resources Business Partner,0.5566,,,,
-Chief Executive Officer,0.5566,,,,
-IT Business Partner,0.5562,,,,
-Small Business Account Executive,0.5562,,,,
-Procurement Manager,0.5557,,,,
-Operating Partner,0.5557,,,,
-Senior Sales Engineer,0.5546,,,,
-Managing Director,0.5542,,,,
-Sales Enablement Manager,0.554,,,,
-Director of Sales Operations,0.5538,,,,
-IT Analyst,0.5533,,,,
-Marketing Manager,0.5532,,,,
-Director of Sales Enablement,0.5522,,,,
-Founder,0.5517,,,,
-Chief Operating Officer,0.5516,,,,
-Head of Field Sales,0.5512,,,,
-Revenue Operations Manager,0.5511,,,,
-Enterprise Account Manager,0.551,,,,
-Financial Planning and Analysis Analyst,0.5507,,,,
-Commercial Account Executive,0.5505,,,,
-Analytics Manager,0.5504,,,,
-Procurement Analyst,0.5504,,,,
-Inside Sales Representative,0.5495,,,,
-Senior Director of Business Development,0.5484,,,,
-Vice President of Small Business Sales,0.5483,,,,
-Business Intelligence Analyst,0.5483,,,,
-Divisional Sales Director,0.5473,,,,
-Customer Marketing Manager,0.5462,,,,
-Head of Mid-Market Sales,0.5459,,,,
-District Sales Director,0.5451,,,,
-Executive Director,0.545,,,,
-Director of Technology,0.5435,,,,
-Business Intelligence Engineer,0.543,,,,
-Partner,0.543,,,,
-Senior Analytics Engineer,0.5425,,,,
-Field Sales Representative,0.5421,,,,
-Channel Sales Manager,0.5419,,,,
-Director of Strategic Sales,0.5414,,,,
-Digital Marketing Manager,0.541,,,,
-Category Analyst,0.5409,,,,
-Senior Procurement Analyst,0.5398,,,,
-Strategic Sales Manager,0.5397,,,,
-Head of Product Management,0.5386,,,,
-Divisional Director,0.5382,,,,
-Senior Director of Procurement,0.5381,,,,
-Manufacturing Manager,0.5379,,,,
-Channel Manager,0.5377,,,,
-Director of Enterprise Sales,0.5375,,,,
-Financial Planning and Analysis Manager,0.5374,,,,
+Associate Partner,0.5764,Industrial Real Estate,0.6259,Systems,0.5859
+Partner,0.564,Engineering Services,0.621,Architecture,0.5856
+Information Technology Manager,0.5616,Health Systems,0.592,Cloud,0.5851
+Director of Manufacturing,0.5575,Furniture,0.5871,Business Development,0.5822
+Technology Manager,0.5538,Real Estate Development,0.583,New Business,0.579
+Platform Manager,0.5529,Management Consulting,0.5786,Strategy,0.5733
+Senior Director of Professional Services,0.5513,Hospitals,0.5764,Product Strategy,0.5668
+Head of Finance,0.5463,Commercial Real Estate,0.5745,Implementation,0.5639
+Head of Product Management,0.5432,Clinics,0.5685,Purchasing,0.5616
+Head of Information Technology,0.5428,Accounting Services,0.5647,Business Operations,0.5603
+Director of Product Management,0.5336,Home and Garden,0.56,Growth,0.5598
+Area Director,0.5311,Integration Platforms,0.556,Capital Markets,0.5579
+Pharmacy Director,0.5271,Property Technology,0.555,Commercial Sales,0.5574
+Editorial Director,0.5243,Real Estate Investment Trust,0.554,Investment Management,0.5539
+Clinical Director,0.5239,Automotive Retail,0.5507,Operations,0.5523
+Head of Security,0.523,General Contracting,0.5461,Underwriting,0.5495
+Head of Marketing,0.5219,Veterinary,0.546,Manufacturing,0.549
+Security Manager,0.5216,Construction Materials,0.5448,Supply Chain,0.5485
+Provost,0.5206,Health Technology,0.5442,Technology,0.5469
+Founder,0.5198,Process Manufacturing,0.542,Product Management,0.5468
+Real Estate Manager,0.5196,Biopharmaceuticals,0.5406,Asset Management,0.5465
+Enterprise Architect,0.5188,Equities Trading,0.5403,Academic Affairs,0.5459
+Managing Partner,0.5182,Financial Consulting,0.5386,Data,0.5435
+Director of Product Marketing,0.5178,Mortgage,0.5381,Quality Assurance,0.5403
+Accounting Manager,0.5177,Property Management,0.5377,Information Technology,0.5403
+Buyer,0.5174,Vertical Software,0.5365,Accounting,0.539
+Director of Technology,0.5174,Construction Equipment,0.5348,Marketing,0.5356
+Senior Partner,0.5165,Biotechnology,0.5333,Advisory,0.5353
+Managing Editor,0.5165,Hospitality,0.5324,Quality Control,0.5352
+Director of Product,0.5159,Field Service Software,0.5316,Clinical Operations,0.5346
+Cloud Manager,0.5149,Beauty and Personal Care,0.529,Product Marketing,0.5333
+Country Manager,0.5134,Pharmaceuticals,0.5241,Publishing,0.5323
+Managing Director,0.5128,Laboratory Services,0.5237,Analytics,0.5323
+Technical Architect,0.5125,Architecture Services,0.5231,Maintenance,0.5319
+Medical Director,0.512,Home Health,0.523,Investor Relations,0.5302
+Data Manager,0.5112,,,,
+Group President,0.5112,,,,
+Head of Platform,0.5105,,,,
+Superintendent,0.5098,,,,
+Vice President of Digital Transformation,0.5094,,,,
+Senior Director of Product,0.5075,,,,
+Director of Medical Affairs,0.5065,,,,
+Head of Information Security,0.5058,,,,
+Product Manager,0.5052,,,,
+Head of Product,0.5032,,,,
+Publisher,0.503,,,,
+Engineering Manager,0.5003,,,,
+Head of Digital Transformation,0.5002,,,,
+Director of Platform,0.4985,,,,
+Director of Digital Transformation,0.4973,,,,
+District Sales Director,0.4971,,,,
+Alliances Manager,0.4961,,,,
+Director of Marketing,0.4959,,,,
+Head of Performance Marketing,0.4957,,,,
+Revenue Enablement Manager,0.4951,,,,
+Director of Clinical Development,0.4949,,,,
+Entrepreneur in Residence,0.4947,,,,
+Editor in Chief,0.4939,,,,
+Director of Information Technology,0.4917,,,,
+Director of Logistics,0.491,,,,
+Property Manager,0.4895,,,,
+Logistics Analyst,0.4889,,,,
+Head of Real Estate,0.4887,,,,
+Asset Manager,0.4886,,,,
+Commissioner,0.4885,,,,
+Area Sales Director,0.4883,,,,
+Head of Accounting,0.4883,,,,
+Marketing Manager,0.4883,,,,
+Data Scientist,0.4879,,,,
+Director of Property Management,0.4877,,,,
+IT Business Partner,0.4861,,,,
+Information Security Manager,0.4849,,,,
+Principal Solutions Engineer,0.4849,,,,
+Trader,0.4848,,,,
+Analytics Engineer,0.4844,,,,
+Chief Information Officer,0.484,,,,
+Senior Associate,0.4835,,,,
+Business Operations Analyst,0.4826,,,,
+Enterprise Sales Manager,0.4823,,,,
+Manufacturing Manager,0.4823,,,,
+Supply Chain Manager,0.4819,,,,
+Sales Enablement Manager,0.4818,,,,
+Underwriter,0.4812,,,,
+Vice President of Product Marketing,0.4811,,,,
+Dean,0.4808,,,,
+Area Sales Manager,0.4806,,,,
+Senior Director of Finance,0.4804,,,,
+Investment Analyst,0.4803,,,,
+Partnerships Manager,0.48,,,,
+Director of Drug Development,0.48,,,,
+Cloud Engineer,0.4799,,,,
+Head of Technology,0.479,,,,
+Director of Brand,0.4789,,,,
+Research Analyst,0.4782,,,,
+Business Operations Manager,0.4781,,,,
+Enterprise Account Executive,0.478,,,,
+General Manager,0.4779,,,,
+District Sales Manager,0.4779,,,,
+Infrastructure Manager,0.4779,,,,
+Vice President of Product,0.4777,,,,
