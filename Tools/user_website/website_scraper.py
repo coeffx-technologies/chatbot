@@ -205,5 +205,5 @@ def scrape_website(website_url: str, output_path: str = None) -> str:
 
 if __name__ == "__main__":
     # Change this URL to scrape any website
-    result = scrape_website("https://www.amplemarket.com/")
+    result = scrape_website("https://kissflow.com/")
     print(f"File: {result}")

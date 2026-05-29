@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from api.routes import router
-from funcs import get_model, build_retriever, build_graph
+from llm_funcs import get_model, build_retriever, build_graph
 
 app = FastAPI(title="Rocketsteer BDR Assistant")
 

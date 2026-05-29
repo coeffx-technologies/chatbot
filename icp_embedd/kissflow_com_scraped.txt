@@ -1,0 +1,725 @@
+======================================================================
+WEBSITE INTELLIGENCE REPORT
+Website : https://kissflow.com/
+Scraped : 2026-05-29 08:19:41
+Pages   : 6
+======================================================================
+
+PAGES SCRAPED:
+  1. Kissflow | Build Custom Enterprise Apps Fast with AI & Low-Code
+     https://kissflow.com/
+  2. About | Developers
+     https://developers.kissflow.com/form/about/
+  3. 11+ Digital Transformation Case Studies You Should Know | Kissflow
+     https://kissflow.com/digital-transformation/digital-transformation-case-studies/
+  4. Kissflow Pricing: Low-Code No-Code Platform Pricing for Enterprise
+     https://kissflow.com/pricing/
+  5. Solution - Kissflow glossary - Kissflow Community
+     https://community.kissflow.com/t/83y1b4v/solution
+  6. Powerful Features for Enterprise Business | Kissflow Low-Code Platform
+     https://kissflow.com/platform/all-features/
+
+----------------------------------------------------------------------
+
+PAGE 1: Kissflow | Build Custom Enterprise Apps Fast with AI & Low-Code
+URL: https://kissflow.com/
+--------------------------------------------------
+
+# Build Custom Enterprise Apps Fast with AI & Low-Code
+
+## Oil and Gas
+
+Core applications to increase efficiency, throughput, and safety throughout every stream
+
+![kissflow-mcdermott](https://kissflow.com/hubfs/kissflow-mcdermott.webp)
+
+"Kissflow is extremely intuitive and straightforward. Our teams can build and manage on their own while we govern."
+
+Renee Villarreal
+
+Senior Director of IT, McDermott
+
+## Retail
+
+Flexible applications to adapt to your unique supply chain and operations models. 
+
+![caratlane](https://kissflow.com/hubfs/caratlane-1.svg)
+
+"I designed it, tested it, and had it ready in a week. The platform is simple and highly intuitive."
+
+Ajith Singh
+
+AVP of Product Management, CaratLane
+
+## Manufacturing
+
+Build the perfect applications to handle the flow of goods and data throughout the value stream  
+
+![Olympus](https://kissflow.com/hubfs/Olympus-Oct-19-2022-07-38-52-42-AM-1.svg)
+
+"Processes took ages to complete when we used our old tool and email. Now, in addition to speed, our processes are more organized, and we have more control"
+
+Griselda Juve
+
+Supply Chain Specialist
+
+======================================================================
+
+PAGE 2: About | Developers
+URL: https://developers.kissflow.com/form/about/
+--------------------------------------------------
+
+# About | Developers
+
+A form is an entity that you can use to collect input from the people who participate in your workflows. Forms are predominantly used in flows like processes, boards, and dataforms in Kissflow. A form has three primary components - section, field, and table.
+
+SDKs for forms are available in both apps and in the individual flows in the Kissflow. The available methods are:
+
+1.  getField()
+2.  updateField()
+3.  getTable()
+4.  toJSON()
+
+> Note: Form’s SDKs exclusively support read and update methods, with no provision for create and delete operations.
+
+======================================================================
+
+PAGE 3: 11+ Digital Transformation Case Studies You Should Know | Kissflow
+URL: https://kissflow.com/digital-transformation/digital-transformation-case-studies/
+--------------------------------------------------
+
+# 11+ Digital Transformation Case Studies You Should Know
+
+## Why Internal Operations Are the Fastest Path to Digital ROI
+
+Many digital transformation efforts stall because they focus only on customer-facing systems. But internal operations—HR, finance, procurement, and others—often remain fragmented and manual. The result: stalled approvals, disjointed workflows, and frustrated employees. A well-documented digital transformation case study shows that streamlining internal operations with automation and no-code platforms can be just as critical as upgrading customer-facing tools.
+
+## The biggest challenges of internal operations
+
+### Challenge 1: Poor communication
+
+Messages and important announcements get lost in long email threads, withholding the progress of employee and/or customer requests.
+
+### Challenge 2: Human error
+
+![human_error-2](https://kissflow.com/hs-fs/hubfs/human_error-2.webp?width=3600&height=1590&name=human_error-2.webp)
+
+### Challenge 3: Skill gap
+
+Poor training and lack of access to digital solutions hinder the employees’ productivity during a [digital transformation](https://kissflow.com/digital-transformation/what-is-digital-transformation/) initiative.
+
+### Challenge 4: Siloes
+
+Specialized assignments minimize opportunities for collaboration and communication across departments.
+
+## Empowering businesses with digital work platform
+
+### Productivity
+
+Kissflow has aided many businesses to optimize how they plan and keep track of projects and events, and maintain communication for better performance—serving as a strong digital transformation case study for enterprises looking to modernize internal operations.
+
+#### **1\. Olympus**
+
+Workflows and systems are also susceptible to stagnation. Olympus needed a modern, intuitive, and automated platform to enhance processes and hasten the delivery of tasks. 
+
+[**\[****View Case Study****\]**](https://kissflow.com/success-stories/olympus-case-study)
+
+#### **2\. Vietnamobile**
+
+Efficiency was a top priority for the Hanoi-based Vietnamobile. It envisioned adopting a digital workplace management platform for easy tracking and reliable internal communication.
+
+[**\[View Case Study\]**](https://kissflow.com/success-stories/vietnammobile-case-study)
+
+#### **3\. Quality Companies LLC**
+
+[Logistics](https://kissflow.com/solutions/logistics/) company Quality Companies gathered countless documents via email daily. It needed a clear documentation trail to stay on top of requests and processing dates.
+
+#### **4\. Davenport University**
+
+Universities are no strangers to budget cuts and complex procedures to manage requests. Davenport University sought an innovative solution to save time on processing student forms and other documents.
+
+### **Approval**
+
+Leading businesses have leveraged Kissflow to streamline the handling and management of approval requests to avoid delays in their workflows, making them notable examples of digital transformation case studies.
+
+#### **5\. GreenCube Global**
+
+Speed and precision are vital to handling finance documents. GreenCube Global required a payment approval solution to monitor requests exchanged between managers and the finance department.
+
+#### **6\. Bergstrom**
+
+Control is necessary for volatile scenarios such as managing write-off processes. Wisconsin’s biggest automotive dealer Bergstrom sought a more streamlined workflow in its accounting department.
+
+[**\[****View Case Study****\]**](https://kissflow.com/success-stories/bergstrom-auto-case-study)
+
+#### **6\. Verisys**
+
+Data management in the healthcare industry is a big responsibility for Verisys. Moderators and aggregators needed well-coordinated workflows for swift approval processes.
+
+#### **7\. Tripwolf**
+
+Startups need compelling systems to succeed among big players in the market. Tripwolf, a startup travel agency, sought to automate employee leave requests for easy approval and adjustment of workload.
+
+### **Automation**
+
+Kissflow has helped many organizations reimagine manual processes with automation for better execution of business operations and communication in the workplace.
+
+#### **8\. Landmark Properties**
+
+Automated workflows nurture transparency and collaboration. Real estate firm Landmark Properties empowered its marketing and other teams, with a central workplace platform to enhance efficiency.
+
+[**\[****View Case Study****\]**](https://kissflow.com/success-stories/landmark-properties-case-study)
+
+#### **9\. Project SYNCERE**
+
+Manually going through documents from over 20 programs overwhelmed the staff of Project SYNCERE. The non-profit organization embraced the power of automation and improved internal operations.
+
+#### **10.Beqom**
+
+For developers such as Beqom, requests go through multiple pipelines across the world to receive approval. Automated workflows helped them simplify processes and keep track of pending requests.
+
+#### **11\. Lincoln Financial Media**
+
+The media industry is heavily engaging in digital efforts to maximize its campaigns. Lincoln Financial Media left traditional paper forms and archives for a fully digital and collaborative platform. Embrace [digital transformation](https://kissflow.com/digital-transformation) with Kissflow
+
+## All-in-one digital transformation solution
+
+From workflow management and process automation to application development, Kissflow offers comprehensive tools to bolster your digital journey on a single interface, as highlighted in various digital transformation case studies.
+
+### Empower and engage business users
+
+[Business users](https://kissflow.com/business-users/) bring solutions to life with locally-made business-critical applications, boosting confidence and satisfaction at work.
+
+### Real-time reporting and performance analytics
+
+Keep track of performance, documentation, and audit trails with clear and concise reports. Get insights from multiple apps to build powerful and accurate reports
+
+### Scale revenue growth
+
+[Digital transformation platform](https://kissflow.com/digital-transformation) like Kissflow cut back operational costs by 10% and boost revenue growth to up to 15%[\[1\]](https://www.gartner.com/en/information-technology/topics/digital-transformation).
+
+## Customer testimonials
+
+Don’t just take our word for it—hear the success stories directly from our customers.
+
+### Olympus
+
+“With Kissflow, I got used to developing processes very fast and the support given was very helpful.” 
+
+\- Griselda Juve, Purchaser
+
+### Tripwolf
+
+“Kissflow has the most important workflow features. It does exactly what it should.” 
+
+\- Wilfried Schaffner, CEO
+
+### Lincoln Financial Media
+
+“[Kissflow](https://kissflow.com/platform/) does exactly what we hoped it would. We are very happy with the product and support is quick to respond.”
+
+\- Matt & Remy, Lincoln Financial
+
+### Wayne Metropolitan
+
+“We were able to completely customize and change forms at any point without needing to contact an IT desk or have a background in programming.” 
+
+\- Yvonne Herman, Chief Human Resource Officer
+
+### McDermott
+
+“This is so easy, even my mom could do this.' It was extremely intuitive and straightforward. The watermark was, 'I don't need to call IT to do this. I can do it myself. “
+
+\- Renee Villarreal, Senior IT Manager
+
+### Arvada Fire
+
+“PO approvals are so much easier. We've gone from two days to a few hours. It's fantastic!” 
+
+– Chris, Arvada Fire
+
+1\. What is an example of a digital transformation case study?
+
+Olympus is a strong example of digital transformation. The company adopted Kissflow to modernize outdated workflows and speed up task delivery. By switching to a no-code work platform, Olympus eliminated manual delays, improved communication, and reduced reliance on IT for routine process changes.
+
+2\. What are the 4 types of digital transformation?
+
+The four types of digital transformation are process, business model, domain, and cultural transformation. Process transformation focuses on improving internal operations with automation. Business model transformation changes how a company delivers value, often through new revenue channels. Domain transformation involves entering new markets using digital capabilities, while cultural transformation aligns people, skills, and workflows with a digital-first mindset.
+
+3\. Why does digital transformation matter?
+
+Digital transformation improves how organizations operate, make decisions, and respond to change. It helps them replace outdated, manual processes with digital workflows that are faster, more accurate, and easier to scale. It also builds long-term adaptability by giving business teams the tools they need to solve problems independently—without waiting on IT.
+
+4\. Which industries are undergoing digital transformation?
+
+Nearly every industry is evolving, but sectors like finance, manufacturing, healthcare, retail, and logistics lead the way. These industries face high volumes of manual tasks, complex workflows, and rising customer expectations—making them ideal candidates for automation, low-code application development, and connected systems.
+
+5\. What do digital transformation processes look like?
+
+A digital transformation process usually begins with identifying operational gaps and high-friction workflows. Next comes selecting the right platform, setting up governance, and rolling out no-code or low-code solutions across departments. It’s not a single project—it’s a continuous shift in how teams work, collaborate, and solve problems with technology.
+
+6\. What are the benefits of digital transformation?
+
+Organizations that embrace digital transformation see measurable gains—faster turnaround times, better data access, fewer manual errors, and reduced operating costs. It also improves employee satisfaction by enabling teams to work with tools they can manage and adapt themselves. For CIOs, it clears IT backlogs and frees up resources for more strategic work.
+
+======================================================================
+
+PAGE 4: Kissflow Pricing: Low-Code No-Code Platform Pricing for Enterprise
+URL: https://kissflow.com/pricing/
+--------------------------------------------------
+
+# Low-Code No-Code Platform Pricing for Enterprise
+
+## The Enterprise Platform for  
+Million-Dollar Problems
+
+Kissflow solves complex operational challenges for a fraction of what  
+they cost you today
+
+[Set Up a Consultation](https://kissflow.com/book-a-demo/)
+
+##### Trusted by leading enterprises
+
+![Motorola Solutions](https://kissflow.com/hubfs/Motorola%20Solutions.png)
+
+![NBC Universal](https://kissflow.com/hubfs/NBC%20Universal.png)
+
+![Southers Glazers](https://kissflow.com/hubfs/Southers%20Glazers.png)
+
+![Essilor Luxottica](https://kissflow.com/hubfs/Essilor%20Luxottica.png)
+
+![University of Michigan](https://kissflow.com/hubfs/University%20of%20Michigan.png)
+
+![NielsenIQ](https://kissflow.com/hubfs/NielsenIQ.png)
+
+## Pricing built around the **value you generate**
+
+Problems cost millions. The solution shouldn’t.
+
+#### Lost revenue
+
+Stop financial leaks caused by missed opportunities and inefficient funnels.
+
+#### Compliance risks
+
+Protect your business from costly legal penalties and reputation damage.
+
+#### Major operational inefficiencies
+
+Eliminate manual bottlenecks to ensure your team focuses on growth.
+
+#### Expensive delays
+
+Prevent stalled projects from draining your budget and aiding competitors.
+
+#### Crumbling legacy systems
+
+Replace fragile outdated technology that limits your ability to scale.
+
+#### Disconnected teams & systems
+
+Break down silos to align your people for better decisions.
+
+## Real enterprises **saving real money**
+
+![Puma GIF optimized](https://kissflow.com/hubfs/Puma%20GIF%20optimized.gif)
+
+![Puma_logo-1](https://kissflow.com/hubfs/Puma_logo-1.webp)
+
+INDUSTRY Energy
+
+HEADQUATERS USA
+
+“Advanced automation of all processes is easy to set up. I cannot imagine how to manage workflows without this software.”
+
+##### Tanay Tiwary
+
+Global Head - Digitalization & Business Improvement
+
+[See the Full Story](https://kissflow.com/success-stories/puma-energy-case-study)
+
+KEY HIGHLIGHTS
+
+700+
+
+Use Cases
+
+73%
+
+Operation Efficiency
+
+1001 - 5000
+
+\# of Employees
+
+![SN Aboitiz optimized](https://kissflow.com/hubfs/SN%20Aboitiz%20optimized.gif)
+
+![logogo](https://kissflow.com/hubfs/logogo.png)
+
+INDUSTRY Energy
+
+HEADQUATERS USA
+
+“Advanced automation of all processes is easy to set up. I cannot imagine how to manage workflows without this software.”
+
+##### Maria Theresa Cabigon
+
+CIO, SN Aboitiz Power Group
+
+[See The Full Story](https://kissflow.com/success-stories/sn-aboitiz-power-group-case-study)
+
+KEY HIGHLIGHTS
+
+800+
+
+Use Cases
+
+10x
+
+ROI
+
+201 - 500
+
+\# of Employees
+
+![Valantic GIF Optimizer](https://kissflow.com/hubfs/Valantic%20GIF%20Optimizer.gif)
+
+![Valantic-Logo-20170920.svg (1)](https://kissflow.com/hubfs/Valantic-Logo-20170920.svg%20(1).png)
+
+INDUSTRY IT Consulting
+
+HEADQUATERS Germany
+
+“Everyone uses Kissflow. It requires no previous training. The platform is very intuitive and user-friendly.”
+
+##### Antonio Serpa Pinto
+
+Head of IT
+
+[See the Full Story](https://kissflow.com/success-stories/valantic-case-study)
+
+KEY HIGHLIGHTS
+
+150+
+
+Use Cases
+
+18
+
+Countries
+
+1,001 - 5,000
+
+\# of Employees
+
+![Previous](https://44361207.fs1.hubspotusercontent-na1.net/hubfs/44361207/Arrow-1.svg)
+
+![Next](https://44361207.fs1.hubspotusercontent-na1.net/hubfs/44361207/Arrow-1.svg)
+
+## **Enterprise rollouts  
+**aren't just about the software
+
+We don’t just sell software, we create transformation
+
+#### Platform and Technology
+
+*   Unlimited applications
+*   Unlimited integrations
+*   Public and private cloud hosting
+*   Dashboards, pages, workflows, reports, analytics, and more
+*   Enterprise-grade governance and security
+*   25+ AI-powered automation features
+
+#### Implementation
+
+*   Experienced industry-specific solution architects
+*   Hands-on implementation and customization
+*   Training and enablement for teams
+*   Dedicated support throughout your transformation
+*   Center-of-Excellence creation and support
+*   Ongoing optimization planning
+
+## No surprise costs
+
+Pricing built around the  
+value you receive
+
+No surcharges for AI or  
+API usage
+
+Fixed  
+annual agreements
+
+Purchase additional  
+services as required
+
+## **Companies trust Kissflow**  
+to deliver lasting value
+
+#### Award-winning 451% ROI
+
+###### Validated by Nucleus Research
+
+50+
+
+###### **Fortune 500** companies  
+trust Kissflow
+
+80%
+
+###### of customers stay with  
+us for **5+ years**
+
+#### Recognized by
+
+![Forrester-1](https://kissflow.com/hubfs/Forrester-1.webp)
+
+WAVE REPORT
+
+The Forrester Wave™:  
+Low-Code Platforms For Citizen Developers, Q1 2024
+
+![Crozdesk](https://kissflow.com/hubfs/Crozdesk.webp)
+
+For Low-Code Development Platform
+
+![Gartner Peer Insight](https://kissflow.com/hubfs/Gartner%20Peer%20Insight.webp)
+
+For Enterprise Low-Code/No-Code Applications
+
+## Recognized by the industry’s most trusted voices
+
+![Forrester-1](https://kissflow.com/hubfs/Forrester-1.webp)
+
+WAVE REPORT
+
+The Forrester Wave™:  
+Low-Code Platforms For Citizen Developers, Q1 2024
+
+![Crozdesk](https://kissflow.com/hubfs/Crozdesk.webp)
+
+For Low-Code Development Platform
+
+![Gartner Peer Insight](https://kissflow.com/hubfs/Gartner%20Peer%20Insight.webp)
+
+For Enterprise Low-Code/No-Code Applications
+
+### Customers trust us.  
+The numbers back it up.
+
+Real usage. Real results. Real satisfaction.
+
+2M+
+
+Annual transactions powered by Kissflow
+
+451%
+
+ROI achieved within just 2.8 months
+
+94.7%
+
+Customer satisfaction rating
+
+## Stories from transformative leaders
+
+![Puma GIF optimized](https://kissflow.com/hubfs/Puma%20GIF%20optimized.gif)
+
+![Puma_logo-1](https://kissflow.com/hubfs/Puma_logo-1.webp)
+
+INDUSTRY Energy
+
+HEADQUATERS USA
+
+“Advanced automation of all processes is easy to set up. I cannot imagine how to manage workflows without this software.”
+
+##### Tanay Tiwary
+
+Global Head - Digitalization & Business Improvement
+
+[See the Full Story](https://kissflow.com/success-stories/puma-energy-case-study)
+
+KEY HIGHLIGHTS
+
+700+
+
+Use Cases
+
+73%
+
+Operation Efficiency
+
+1001 - 5000
+
+\# of Employees
+
+![SN Aboitiz optimized](https://kissflow.com/hubfs/SN%20Aboitiz%20optimized.gif)
+
+![SN Aboitiz Logo](https://kissflow.com/hubfs/SN%20Aboitiz%20Logo.webp)
+
+“Advanced automation of all processes is easy to set up. I cannot imagine how to manage workflows without this software.”
+
+##### Maria Theresa Cabigon
+
+CIO, SN Aboitiz Power Group
+
+[See The Full Story](https://kissflow.com/success-stories/sn-aboitiz-power-group-case-study)
+
+KEY HIGHLIGHTS
+
+800+
+
+Use Cases
+
+10x
+
+ROI
+
+201 - 500
+
+\# of Employees
+
+![Valantic GIF Optimizer](https://kissflow.com/hubfs/Valantic%20GIF%20Optimizer.gif)
+
+![valantic](https://kissflow.com/hubfs/valantic.png)
+
+INDUSTRY IT Consulting
+
+HEADQUATERS Germany
+
+“Everyone uses Kissflow. It requires no previous training. The platform is very intuitive and user-friendly.”
+
+##### Antonio Serpa Pinto
+
+Head of IT
+
+[See the Full Story](https://kissflow.com/success-stories/valantic-case-study)
+
+KEY HIGHLIGHTS
+
+150+
+
+Use Cases
+
+18
+
+Countries
+
+1,001 - 5,000
+
+\# of Employees
+
+![Previous](https://44361207.fs1.hubspotusercontent-na1.net/hubfs/44361207/Arrow-1.svg)
+
+![Next](https://44361207.fs1.hubspotusercontent-na1.net/hubfs/44361207/Arrow-1.svg)
+
+======================================================================
+
+PAGE 5: Solution - Kissflow glossary - Kissflow Community
+URL: https://community.kissflow.com/t/83y1b4v/solution
+--------------------------------------------------
+
+# Solution - Kissflow glossary - Kissflow Community
+
+A solution in Kissflow refers to any business use case or an operational need solved using the platform’s no-code tools, such as a **[Process](https://community.kissflow.com/t/h7h4a18/process-overview)**, **[Board](https://community.kissflow.com/t/q6h9ql3/board-overview)**, **[App](https://community.kissflow.com/t/x2h9qkj/introduction-to-kissflow-apps)**, or **[Portal](https://community.kissflow.com/t/m1h4azh/portal-overview)**. 
+
+Solutions can function as standalone entities (for example, a single process or board) or as integrated systems, where multiple solutions and even external tools work together to deliver a unified outcome.
+
+======================================================================
+
+PAGE 6: Powerful Features for Enterprise Business | Kissflow Low-Code Platform
+URL: https://kissflow.com/platform/all-features/
+--------------------------------------------------
+
+# Powerful Features for Enterprise Business
+
+![Listing (1)](https://kissflow.com/hubfs/Listing%20(1).svg)
+
+#### Kissflow AI
+
+Bring simple, smart, and fast solutions to every corner of your business with AI
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/ai/) 
+
+![app-builder](https://kissflow.com/hubfs/app-builder.svg)
+
+#### App Builder
+
+Build fully functional enterprise apps with no-code and low-code tools
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/app-builder/) 
+
+![Process Builder-1](https://kissflow.com/hubfs/Process%20Builder-1.svg)
+
+#### Process Builder
+
+Supercharge your operations through powerful no-code automation
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/process-builder/) 
+
+![Boards-3](https://kissflow.com/hubfs/Boards-3.svg)
+
+#### Boards
+
+Get full visibility into projects, tickets, and cases with flexible boards
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/board/) 
+
+![workflow orchestration thumbnail](https://kissflow.com/hs-fs/hubfs/orchestration.webp?width=2000&name=orchestration.webp)
+
+#### Workflow Orchestration
+
+Connect structured and unstructured workflows for enterprise-grade automation
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/workflow-orchestration/) 
+
+![Form Builder](https://kissflow.com/hs-fs/hubfs/Form%20Builder.png?width=320&height=200&name=Form%20Builder.png)
+
+#### Form Builder
+
+Create powerful forms with a simple visual builder
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/form-builder/) 
+
+![Reporting & Analytics](https://kissflow.com/hs-fs/hubfs/Reporting%20%26%20Analytics.png?width=320&height=200&name=Reporting%20%26%20Analytics.png)
+
+#### Reporting & Analytics
+
+Let the data guide you with deep insights and quick reports
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/analytics/) 
+
+![Integrations-Jun-07-2023-12-28-58-8753-PM](https://kissflow.com/hubfs/Integrations-Jun-07-2023-12-28-58-8753-PM.svg)
+
+#### Integrations
+
+Extend the capabilities of your systems with easy no-code connectors
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/integrations/) 
+
+![External Portals-1](https://kissflow.com/hubfs/External%20Portals-1.svg)
+
+#### External Portals
+
+Open up your core applications to external users
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/external-portal/) 
+
+![governance](https://kissflow.com/hs-fs/hubfs/governance.webp?width=1280&height=800&name=governance.webp)
+
+#### Governance
+
+Govern your apps and users with complete visibility
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/governance/) 
+
+![decision_table](https://kissflow.com/hs-fs/hubfs/decision_table.webp?width=2000&height=1250&name=decision_table.webp)
+
+#### Decision Tables
+
+Design, manage, and optimize complex decision logic
+
+[Read more ![Kissflow_Icon](https://kissflow.com/hubfs/button-arrow.svg)](https://kissflow.com/platform/decision-table/)
+
+======================================================================
+
